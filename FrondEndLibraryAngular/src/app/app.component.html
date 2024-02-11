@@ -1,0 +1,36 @@
+<div *ngIf="!isStudentLoggedIn && !isAdminLoggedIn">
+<mat-toolbar color="primary">
+  <span>Library Management</span>
+  <span class="spacer" style="flex-grow: 1 1 auto;"></span>
+  <button style="position: relative;margin: 950px;" mat-raised-button color="accent" routerLink="/login" routerLinkActive="active" class="example-icon" aria-label="Example icon-button with share icon">Login
+  </button>
+</mat-toolbar>
+</div>
+
+<div *ngIf="isAdminLoggedIn">
+  <mat-toolbar color="primary">
+    <span>Library Management</span>
+    <span class="spacer"></span>
+    <button mat-button routerLink="/admin/dashboard"  style="position: relative;margin: 50px;" routerLink="active" >Dashboard</button>
+    <button mat-button routerLink="/admin/addStudent" style="position: relative;margin: 50px;">Student</button>
+    <button mat-button routerLink="/admin/listStudent" style="position: relative;margin: 50px;">List Of Student</button>
+    <button mat-button  style="position: relative;margin: 50px;" routerLink="active" >Book</button>
+    <button mat-button  style="position: relative;margin: 50px;" (click)="logout()" >Logout</button>
+  </mat-toolbar>
+  </div>
+
+
+
+  <div *ngIf="isStudentLoggedIn">
+    <mat-toolbar color="primary">
+      <span>Library Management</span>
+      <span class="spacer"></span>
+      <button mat-raised-button color="accent" routerLink="/login" routerLinkActive="active" class="example-icon" aria-label="Example icon-button with share icon">Login
+      </button>
+    </mat-toolbar>
+    </div>
+
+
+
+
+<router-outlet></router-outlet>

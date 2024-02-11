@@ -1,0 +1,51 @@
+<div class="container">
+    <form [formGroup]="addStudentForm">
+
+        <mat-form-field appearance="outline" style="position: relative;top: 90px;left: 80px;width: 40%;">
+            <mat-label>Enter Name</mat-label>
+    <input matInput formControlName="name" placeholder="Name"  required>
+    <mat-error *ngIf="addStudentForm.get('name').invalid && addStudentForm.get('name').touched">Please enter valid</mat-error>
+
+        </mat-form-field>
+        <mat-form-field appearance="outline" style="position: relative;top: 90px;left: 120px;width: 40%;">
+            <mat-label>Enter your email</mat-label>
+    <input matInput formControlName="email" placeholder="pat@example.com"  required>
+    <mat-error *ngIf="addStudentForm.get('email').invalid && addStudentForm.get('email').touched">Please enter valid</mat-error>
+
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" style="position: relative;top: 120px;left: 80px;width: 40%;">
+            <mat-label>Enter filires</mat-label>
+    <input matInput formControlName="filires" placeholder="filires"  required>
+    <mat-error *ngIf="addStudentForm.get('filires').invalid && addStudentForm.get('filires').touched">Please enter valid</mat-error>
+
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" style="position: relative;top: 120px;left: 120px;width: 40%;">
+            <mat-label>Enter  Groupe</mat-label>
+    <input matInput formControlName="groupe" placeholder="groupe"  required>
+    <mat-error *ngIf="addStudentForm.get('groupe').invalid && addStudentForm.get('groupe').touched">Please enter valid</mat-error>
+
+        </mat-form-field>
+
+
+        <mat-form-field appearance="outline" style="position: relative;top: 160px;left: 80px;width: 40%;">
+            <mat-label>Enter Classe</mat-label>
+    <input formControlName="classe" matInput placeholder="classe"  required>
+    <mat-error *ngIf="addStudentForm.get('classe').invalid && addStudentForm.get('classe').touched">Please enter valid</mat-error>
+
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" style="position: relative;top: 160px;left: 120px;width: 40%;">
+            <mat-label>Enter password</mat-label>
+            <input matInput formControlName="password" type="password">
+            <mat-error *ngIf="addStudentForm.get('password').invalid && addStudentForm.get('password').touched">Please enter valid</mat-error>
+            <button mat-icon-button matSuffix  [attr.aria-label]="'Hide password'" >
+              <mat-icon></mat-icon>
+            </button>
+          </mat-form-field>
+
+          <button mat-raised-button color="primary" type="submit" [disabled]="addStudentForm.invalid" (click)="onSubmit()" style="position: relative;top: 250px;right: 520px;width:250px;">ADD</button>
+
+    </form>
+</div>
